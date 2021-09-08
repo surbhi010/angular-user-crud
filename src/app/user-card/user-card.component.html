@@ -1,0 +1,14 @@
+
+  <mat-card class="example-card">
+    <mat-card-title><a class="card-title" (click)="openDialog()">{{user.name}}</a></mat-card-title>
+    <mat-card-content>
+        <p class="card-text">{{user.phone}}</p>
+        <p class="card-text">{{user.email}}</p>
+        <p class="card-text"><a [href]="user.website">{{user.website}}</a></p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button color="primary" (click)="deleteUser()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>

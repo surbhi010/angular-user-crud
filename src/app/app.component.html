@@ -1,0 +1,11 @@
+<mat-card class="header-bar">Users
+  <button mat-raised-button (click)="addUser()" class="add-user">Add User</button>
+</mat-card>
+<div class="container">
+  <mat-grid-list cols="5" rowHeight="250px" >
+    <mat-grid-tile *ngFor="let user of users">
+      <user-card [user]="user" (editUser)="UpdateUser($event)" (deleteUser)="delete()"></user-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<router-outlet></router-outlet>

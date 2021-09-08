@@ -1,0 +1,24 @@
+<h1 mat-dialog-title *ngIf="data" >Update User</h1>
+<h1 mat-dialog-title *ngIf="!data" >Add User</h1>
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="userForm.get('name')" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input matInput [formControl]="userForm.get('phone')" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="userForm.get('email')" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Website</mat-label>
+        <input matInput [formControl]="userForm.get('website')">
+    </mat-form-field>
+    <mat-card-actions>
+        <button mat-button [disabled]="!userForm.valid" (click)="updateUser()">Submit</button>
+    </mat-card-actions>
+</form>
